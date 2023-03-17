@@ -1,0 +1,19 @@
+/* .home_image {
+    height:100vh;
+    background: url('/mycss/image2.jpg');
+    background-size:cover;
+    position:relative;
+} */
+
+/* text css above hero image*/
+.hero_title {
+    font-size: 4.5rem;
+}
+.hero_desc {
+    font-size: 2rem;
+}
+
+/* about section image css */
+.image-about_me{
+    width: 100%;
+}
