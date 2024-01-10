@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" /> -->
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <link href="./mycss/index.css" type="text/css" rel="stylesheet">
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet">
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -63,18 +65,98 @@
             }
 
         }
+
+
+        /* Keyframes for your name movement */
+        @keyframes moveName {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(20px);
+                /* Adjust the value as needed */
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Styling for the dark blue background */
+        #back {
+            position: fixed;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
+            animation-name: backAnimation;
+            animation-duration: 5s;
+            /* Adjust the duration as needed */
+            animation-iteration-count: infinite;
+        }
+
+        /* Keyframes animation for the background */
+        @keyframes backAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Animation for moving your name */
+        .hero_title {
+            animation-name: moveName;
+            animation-duration: 3s;
+            /* Adjust the duration as needed */
+            animation-iteration-count: infinite;
+        }
+
+        .wave {
+            animation-name: wave-animation;
+            /* Refers to the name of your @keyframes element below */
+            animation-duration: 2.5s;
+            /* Change to speed up or slow down */
+            animation-iteration-count: infinite;
+            /* Never stop waving :) */
+            transform-origin: 70% 70%;
+            /* Pivot around the bottom-left palm */
+            display: inline-block;
+        }
+
+        @keyframes wave-animation {
+            0% {
+                transform: rotate(0.0deg)
+            }
+
+            10% {
+                transform: rotate(14.0deg)
+            }
+
+        }
+
     </style>
 </head>
 
 <!-- NAVIGATION SECTION-->
 
-<nav class="bg-white shadow-lg">
+<nav class="bg-white shadow-lg sticky-top">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between py-4">
             <a class="text-xl font-semibold" href="#">
-                <img src="./mycss/images.png" alt="Logo" width="30" height="24"
+                <img src="./assets/images/images.png" alt="Logo" width="40" height="24"
                     class="mr-4 inline-block align-text-top">
-                Portfolio
+                ASISIPHO FENTE
             </a>
             <button class="text-gray-600 focus:outline-none md:hidden">
                 <i class="fas fa-bars"></i>
@@ -96,11 +178,11 @@
     <!-- HOME SECTION  -->
 
     <section class="home_image" id="home">
-        <div class="container-fluid" style="background:url(./mycss/background.jpg);">
+        <div class="container-fluid" style="background:url(./assets/images/background.jpg);">
             <div style="height: 500px;" class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-8 hero-text">
                     <div>
-                        <h2 class="hero_title text-primary text-5xl">ASISIPHO FENTE</h2>
+                        <h2 class="hero_title text-primary text-5xl">ASISIPHO FENTE <span class="wave">👋🏾</span></h2>
                         <p class="hero_desc">Software developer</p>
                     </div>
                 </div>
@@ -111,31 +193,32 @@
 
     <!-- ABOUT ME  -->
 
-    <section id="about_me">
+    <section id="about_me" class="h-screen">
         <div class="container mt-4 pt-4">
             <h1 class="text-center">About Me</h1>
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <img src="./mycss/image3.jpg" class="image-about_me" alt="">
+                    <img src="./assets/images/image3.jpg" class="image-about_me shadow-lg" alt="">
                 </div>
                 <div class="col-md-8">
-                    <p>Hello!, I'm a passionate full-stack web developer driven by a mission to leverage technology for
+                    <p> Hello! I'm a passionate full-stack web developer driven by a mission to leverage technology for
                         social good. With a focus on addressing societal challenges, I'm dedicated to introducing tech
                         solutions into communities while actively advocating for women's empowerment in the tech sphere.
-                        My commitment lies in using technology as a tool to create a more inclusive and impactful future.
+                        My commitment lies in using technology as a tool to create a more inclusive and impactful
+                        future.
                     </p>
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <ul>
                                 <li>Name: Asisipho Fente</li>
-                                <li>Age: 23</li>
+                                <li>Age: 24</li>
                                 <li>Location: Cape Town, WC</li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="row mt-3 text-center justify-content-center">
-                        <a href="./cv.pdf">
+                        <a href="./assets/documents/cv.pdf">
                             <button type="button" class="btn btn-primary"> Download My CV </button>
                         </a>
                     </div>
@@ -143,93 +226,92 @@
             </div>
         </div>
     </section>
-    
+
 
 
     <!--TECH STACK -->
-        <section id="skills" class="bg-gray-100 py-10">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold text-center mb-8">Skills</h2>
-    
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="mb-4 md:mb-0">
-                        <h3 class="text-2xl font-semibold mb-4">Technical Skills</h3>
-                        <ul class="flex flex-wrap justify-center items-center space-x-4">
-                            <li class="inline-flex items-center">
-                                <i class="fab fa-html5 text-5xl text-orange-500"></i>
-                                <span class="ml-2 font-medium">HTML & CSS</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fab fa-python text-5xl text-teal-400"></i>
-                                <span class="ml-2 font-medium">Python</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fab fa-node-js text-5xl text-yellow-500"></i>
-                                <span class="ml-2 font-medium">Node.js</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fab fa-js-square text-5xl text-yellow-500"></i>
-                                <span class="ml-2 font-medium">JavaScript</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-database text-5xl text-purple-500"></i>
-                                <span class="ml-2 font-medium">PostgreSQL</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-code-branch text-5xl text-green-500"></i>
-                                <span class="ml-2 font-medium">RESTful API design</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fab fa-git-alt text-5xl text-orange-500"></i>
-                                <span class="ml-2 font-medium">Git/GitHub Version Control</span>
-                            </li>
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-4">Other Skills</h3>
-                        <ul class="flex flex-wrap justify-center items-center space-x-4">
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-project-diagram text-5xl text-blue-400"></i>
-                                <span class="ml-2 font-medium">Agile Methodologies</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-clipboard-list text-5xl text-pink-500"></i>
-                                <span class="ml-2 font-medium">Kanban Planning</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-user-friends text-5xl text-teal-500"></i>
-                                <span class="ml-2 font-medium">Team Collaboration</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-comments text-5xl text-blue-500"></i>
-                                <span class="ml-2 font-medium">Strong Communication</span>
-                            </li>
-                            <li class="inline-flex items-center">
-                                <i class="fas fa-user-tie text-5xl text-green-500"></i>
-                                <span class="ml-2 font-medium">Leadership</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <section id="skills" class="bg-blue-200 py-10 h-screen">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-8">My Skills</h2>
+
+            <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> -->
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-2xl font-semibold mb-4">Technical Skills</h3>
+                <ul class="flex flex-wrap justify-center items-center space-x-4">
+                    <li class="inline-flex items-center">
+                        <i class="fab fa-html5 text-5xl text-orange-500"></i>
+                        <span class="ml-2 font-medium">HTML & CSS</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fab fa-python text-5xl text-teal-400"></i>
+                        <span class="ml-2 font-medium">Python</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fab fa-node-js text-5xl text-yellow-500"></i>
+                        <span class="ml-2 font-medium">Node.js</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fab fa-js-square text-5xl text-yellow-500"></i>
+                        <span class="ml-2 font-medium">JavaScript</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-database text-5xl text-purple-500"></i>
+                        <span class="ml-2 font-medium">PostgreSQL</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-code-branch text-5xl text-green-500"></i>
+                        <span class="ml-2 font-medium">RESTful API design</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fab fa-git-alt text-5xl text-orange-500"></i>
+                        <span class="ml-2 font-medium">Git/GitHub Version Control</span>
+                    </li>
+                </ul>
             </div>
-        </section>
+<hr>
+            <div class="py-4">
+                <h3 class="text-2xl font-semibold mb-4">Other Skills</h3>
+                <ul class="flex flex-wrap justify-center items-center space-x-4">
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-project-diagram text-5xl text-blue-400"></i>
+                        <span class="ml-2 font-medium">Agile Methodologies</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-clipboard-list text-5xl text-pink-500"></i>
+                        <span class="ml-2 font-medium">Kanban Planning</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-user-friends text-5xl text-teal-500"></i>
+                        <span class="ml-2 font-medium">Team Collaboration</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-comments text-5xl text-blue-500"></i>
+                        <span class="ml-2 font-medium">Strong Communication</span>
+                    </li>
+                    <li class="inline-flex items-center">
+                        <i class="fas fa-user-tie text-5xl text-green-500"></i>
+                        <span class="ml-2 font-medium">Leadership</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
 
 
     <!-- FRONT-END PROJECTS -->
 
-    <section id="front-end_projects">
-        <div class="container">
+    <section id="front-end_projects h-screen">
+        <div class="container mb-10">
             <div class="mt-3">
                 <h1 class="text-center text-primary mt-4">Front-End Projects</h1>
                 <div class="row justify-content-center">
-
-                    <div class=" col-8 col-sm-4 mt-4">
+                    <!-- card -->
+                    <div class="col-md-4 col-sm-4 mt-4">
                         <div class="card">
-                            <img class="card-img-top" src="./mycss/pizza1.png" alt="Card image"
-                                style="width:60%">
+                            <img class="card-img-top" src="./assets/images/pizza1.png" alt="Card image">
                             <div class="card-body">
-                                <h4 class="card-title">Perfect Pizza</h4>
+                                <h4 class="card-title text-center">Perfect Pizza</h4>
                                 <p class="card-text"> This is a responsive Pizza phamflet. It showcases three pizza
                                     options with their prices. </p>
                                 <div class="text-center">
@@ -239,10 +321,9 @@
                         </div>
                     </div>
 
-                    <div class="col-8 col-sm-4 mt-4">
+                    <div class="col-md-4 col-sm-4 mt-4">
                         <div class="card portfolioContent">
-                            <img class="card-img-top" src="./mycss/website.png" alt="Card image"
-                                style="width:60%">
+                            <img class="card-img-top" src="./assets/images/website.png" alt="Card image">
                             <div class="card-body">
                                 <h4 class="card-title">Responsive website</h4>
                                 <p class="card-text">These are my responsive websites built using HTML and CSS as well
@@ -254,10 +335,9 @@
                         </div>
                     </div>
 
-                    <div class="col-8 col-sm-4 mt-4">
+                    <div class="col-md-4 col-sm-4 mt-4">
                         <div class="card portfolioContent">
-                            <img class="card-img-top" src="./mycss/layout.png" alt="Card image"
-                                style="width: 60%">
+                            <img class="card-img-top" src="./assets/images/layout.png" alt="Card image">
                             <div class="card-body">
                                 <h4 class="card-title">Basic Webpage Layout</h4>
                                 <p class="card-text"> This webpage showcases the basic layout of any basic webpage using
@@ -276,50 +356,57 @@
 
     <!-- Back-End Projects -->
 
-    <section id="back-end_projects">
+    <section id="back-end_projects" class="bg-blue-200 py-10">
         <div class="container">
 
             <div class="mt-3">
                 <h1 class="text-center text-primary mt-4">Back-End Projects</h1>
                 <div class="row justify-content-center">
 
-                    <div class=" col-8 col-sm-4 mt-4">
+                    <div class=" col-md-4 col-sm-4 mt-4">
                         <div class="card">
-                            <img class="card-img-top" src="./mycss/js.png" alt="Card image"
-                                style="width:60%">
-                            <div class="card-body">
-                                <h4 class="card-title">JavaScript</h4>
-                                <p class="card-text">Coming soon. </p>
+                            <img class="card-img-top" src="./assets/images/expense.png" alt="Card image">
+                            <div class="card-body bg-blue-100">
+                                <h4 class="card-title">Expense Tracker App</h4>
+                                <p class="card-text">This App helps you list all your expenses, how frequently they
+                                    occur
+                                    and calculates how much your expenses for the day, week and month. It also
+                                    calculates total expenses for the month.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
+                                    <a href="https://expense-tracker-app-l08k.onrender.com/"
+                                        class="btn btn-success">Link</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-8 col-sm-4 mt-4">
+                    <div class="col-md-4 col-sm-4 mt-4">
                         <div class="card portfolioContent">
-                            <img class="card-img-top" src="./mycss/c-.png" alt="Card image"
-                                style="width:60%">
-                            <div class="card-body">
-                                <h4 class="card-title">C++</h4>
-                                <p class="card-text">Coming soon. </p>
+                            <img class="card-img-top" src="./assets/images/waiterschedule.png" alt="Card image">
+                            <div class="card-body bg-blue-100">
+                                <h4 class="card-title">Waiter Availability</h4>
+                                <p class="card-text">This App provides a schedule of available waiters. A waiter will
+                                    log in with their username and select all the days they are available. The store
+                                    manager is able to see all available waiters for the week.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
+                                    <a href="https://waiter-availability.onrender.com/" class="btn btn-success">Link</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-8 col-sm-4 mt-4">
+                    <div class="col-md-4 col-sm-4 mt-4">
                         <div class="card portfolioContent">
-                            <img class="card-img-top" src="./mycss/python.png" alt="Card image"
-                                style="width: 60x;">
-                            <div class="card-body">
-                                <h4 class="card-title">Python</h4>
-                                <p class="card-text">Coming soon. </p>
+                            <img class="card-img-top" src="./assets/images/sneakerapp.png" alt="Card image">
+                            <div class="card-body bg-blue-100">
+                                <h4 class="card-title">Shoe Catalogue</h4>
+                                <p class="card-text">This is an online shoe-shop website, where customers can view
+                                    sneakers
+                                    available. they can add them to their cart and clear their cart. They need to login
+                                    before
+                                    purchasing items. </p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
+                                    <a href="oes-catalague-with-api.onrender.com/" class="btn btn-success">Link</a>
                                 </div>
                             </div>
                         </div>
@@ -331,7 +418,7 @@
 
     <!-- CONTACT ME -->
 
-    <section id="contact_me">
+    <section id="contact_me h-screen">
         <div class="container py-4 mt-4 mb-3 ">
 
             <h1 class="text-center text-primary">Get in touch</h1>
