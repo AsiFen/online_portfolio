@@ -17,3 +17,111 @@
 .image-about_me{
     width: 100%;
 }
+
+.hide {
+    display: none;
+  }
+      
+  .link:hover + .hide {
+    display: block;
+    color: grey;
+  }
+
+  .form-horizontal {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+    .card-image-top {
+        width: 150px;
+        height: 170px;
+
+    }
+
+    .card-img-top {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+}
+
+
+/* Keyframes for your name movement */
+@keyframes moveName {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(20px);
+        /* Adjust the value as needed */
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Styling for the dark blue background */
+#back {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
+    animation-name: backAnimation;
+    animation-duration: 5s;
+    /* Adjust the duration as needed */
+    animation-iteration-count: infinite;
+}
+
+/* Keyframes animation for the background */
+@keyframes backAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animation for moving your name */
+.hero_title {
+    animation-name: moveName;
+    animation-duration: 3s;
+    /* Adjust the duration as needed */
+    animation-iteration-count: infinite;
+}
+
+.wave {
+    animation-name: wave-animation;
+    /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;
+    /* Change to speed up or slow down */
+    animation-iteration-count: infinite;
+    /* Never stop waving :) */
+    transform-origin: 70% 70%;
+    /* Pivot around the bottom-left palm */
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+}
