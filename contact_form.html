@@ -18,9 +18,10 @@
                 // these IDs from the previous steps
                 emailjs.sendForm('service_myc5x1u', 'contact_form', this)
                     .then(function() {
-                        console.log('SUCCESS!');
+                        alert('SUCCESS!');
+                        console.log('success');
                     }, function(error) {
-                        console.log('FAILED...', error);
+                        alert('FAILED...', error);
                     });
             });
         }
