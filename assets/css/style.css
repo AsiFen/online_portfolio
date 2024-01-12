@@ -20,9 +20,14 @@
 
 .hide {
     display: none;
+    position: absolute;
+    left: 30%;
+
+font-size: small;
   }
       
-  .link:hover + .hide {
+  .link:hover + .hide {   
+
     display: block;
     color: grey;
   }
